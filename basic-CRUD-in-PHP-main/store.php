@@ -1,7 +1,7 @@
 <?php
 // Connect to the database
 try{
-    $conn = new PDO('mysql:host=localhost;dbname=MyDatabase', 'MyUsername', 'MyPassword');
+    $conn = new PDO('mysql:host=localhost;dbname=cht2520', 'cht2520', 'atopa786');
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
 catch (PDOException $exception)
@@ -19,6 +19,7 @@ $title = $_POST['title'];
 $year = $_POST['year'];
 $duration = $_POST['duration'];
 
+    
 //SQL INSERT for adding a new row
 //Use a prepared statement to bind the values from the form
 $query = "INSERT INTO films (id, title, year, duration) VALUES (NULL, :title, :year, :duration)";

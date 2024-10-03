@@ -24,7 +24,7 @@ The connection will be stored in the ``` $conn``` variable.
 ```php
 <?php
 try{
-     $conn = new PDO('mysql:host=localhost;dbname=nameOfDatabase', 'username', 'password');
+     $conn = new PDO('mysql:host=localhost;dbname=cht2520', 'cht2520', 'atopa786');
      $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
 catch (PDOException $exception)

@@ -2,7 +2,7 @@
 // The following try..catch block attempts to create a connection to the database
 // We use the same code every time we want to use a database, we just change the connection settings to match our database
 try{
-    $conn = new PDO('mysql:host=localhost;dbname=MyDatabase', 'MyUsername', 'MyPassword');
+    $conn = new PDO('mysql:host=localhost;dbname=cht2520', 'cht2520', 'atopa786');
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
 catch (PDOException $exception)
@@ -11,7 +11,7 @@ catch (PDOException $exception)
 }
 
 //An SQL statement for selecting all the rows in the films table
-$query = "SELECT id, title, year, duration FROM films";
+$query = "SELECT id, title, year, duration FROM films order by year desc";
 
 // Execute this SQL query
 $resultset = $conn->query($query);
@@ -54,6 +54,7 @@ foreach ($films as $film) {
     echo "<a href='show.php?id={$film["id"]}'>";
     // Display the film's title
     echo $film["title"];
+    echo " " . $film["year"];
     echo "</a>";
     echo "</p>";
 }
