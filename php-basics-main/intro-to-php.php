@@ -3,33 +3,20 @@
 <head>
 <title>Introduction to PHP</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<link rel="stylesheet" href="style.css">
-
+<link href="/styles.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/style.css" type="text/css" rel="stylesheet">
 </head>
-
 
 <body>
 
 
-
-
-
-
-
-
-
-
-
 </body>
 <?php
-echo "<h1>Welcdome to PHP</h1>";
 
-
-// 1.
-// a) View the page in a browser. Make sure you can see the welcome message.
 // b) Modify the message so that it appears as a <h1> heading.
-// c) Not a PHP question, but can you link a style sheet to this page and change the background colour of the page and the font.
+echo "<h1>Welcome to my website</h1>";
 
+// c) Not a PHP question, but can you link a style sheet to this page and change the background colour of the page and the font.
 
 // 2. Uncomment the following three PHP variables.
 // a) Using these variables and a PHP echo statement output the message 'Hi Fred. Your favourite colour is red. Your favourite website is http://www.hud.ac.uk.'
