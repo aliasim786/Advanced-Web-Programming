@@ -16,17 +16,17 @@
 // b) Modify the message so that it appears as a <h1> heading.
 echo "<h1>Welcome to my website</h1>";
 
-// c) Not a PHP question, but can you link a style sheet to this page and change the background colour of the page and the font.
-
 // 2. Uncomment the following three PHP variables.
 // a) Using these variables and a PHP echo statement output the message 'Hi Fred. Your favourite colour is red. Your favourite website is http://www.hud.ac.uk.'
 // b) Use HTML <em> tags to italicise the word Fred.
 // c) Use an HTML anchor element to make the text http://www.hud.ac.uk into an actual hyperlink that links to the University homepage. Again, this should all be done using a PHP echo statement.
 
 
-// $name = "Fred";
-// $colour = "red";
-// $url="http://www.hud.ac.uk";
+ $name = "Fred";
+ $colour = "red";
+ $url="http://www.hud.ac.uk";
+
+ echo "<p>Hi <em>{$name}</em>. Your Fav {$colour} is Red. Your fav Website is <a href='www.hud.ac.uk'>{$url}</a>.</p>";
 
 
 // 3. Uncomment following two PHP variables.
@@ -34,27 +34,50 @@ echo "<h1>Welcome to my website</h1>";
 // b) Create another variable, call it $average. $average should be assigned a value that is the mean average of $num1 and $num2. Again, use a PHP echo statement to output the value of $average.
 
 
-// $num1=10;
-// $num2=20;
+ $num1=10;
+ $num2=20;
+$total= $num1 + $num2;
+$average= $total / 2;
 
+echo "<p>{$num1} + {$num2} is equal to {$total}</p>";
+echo "<p>The average of the 2 number is {$average}</p>";
 
 // 4. Uncomment following three PHP variables.
-// The variables $assign1, $assign2 and $assign3 store the marks out of 100 for a student for three different assignments. Assignment 1 has a weighting of 40%, Assignment 2 has a weighting of 25% and Assignment 3 has a weighting of 35%. Create another PHP variable called $overall. Using PHP mathematical operators, calculate an overall mark for the student and assign this value to the variable $overall. Use an echo statement to print this mark into the HTML page.
+// The variables $assign1, $assign2 and $assign3 store the marks out of 100 for a student for three different assignments. Assignment 1 has a weighting of 40%, Assignment 2 has a weighting of 25% and Assignment 3 has a weighting of 35%. Create another PHP variable called $overall. Using PHP mathematical operators,
+// calculate an overall mark for the student and assign this value to the variable $overall. Use an echo statement to print this mark into the HTML page.
 
+$assign1 = 27;
+$assign2 = 38;
+$assign3 = 67;
+$overall = (0.4 * $assign1) + (0.25 * $assign2) + (0.35 * $assign3);
 
-// $assign1 = 56;
-// $assign2 = 78;
-// $assign3 = 68;
+echo "<p> the overall mark for this student is {$overall}</p>";
 
-
-
-// 5.
 // a) In order to pass a module students must get an overall mark that is greater than or equal to 40. Write a PHP if statement that will test if $overall is greater than or equal to 40. If it is, use an echo statement to output "passed". If it isn't use an echo statement to output "failed"
+
+if ($overall >= 40) {
+    echo "<p> You have passed</p>";
+}
+else {
+    echo "<p>You have failed</p>";
+}
+
+
 // b) Write another if statement. This time it should test the value of $overall and output if the student has an A, B, C, D etc.
 
+ if ($overall >= 75){
+    echo "<p> You got an A</p>";
+}
+else if ($overall > 50){
+echo "<p> You got an B</p>";
+}
+else if ($overall > 25){
+    echo "<p> You got an C</p>";
+ }
+else{
+    echo "<p> You got an F</p>";
+ }
 
-
-// 6.
 // The Kaboom Gas company charge their customers for gas as follows:
 // Units of Gas Used Cost(£)
 // Units of Gas:0 to 500 Cost:£10
@@ -62,9 +85,27 @@ echo "<h1>Welcome to my website</h1>";
 // Units of Gas:Over 1000 Cost:£35 + 3p for each unit over 1000
 // The following PHP code assigns a random number value to the variable $units. Uncomment the code and write some additional PHP code that will calculate and output the cost of a gas bill based on the value of $units.
 
+$units = rand(0,2000);
+echo "<p>Units has a value of {$units}.</p>";
 
-// $units = rand(0,2000);
-// echo "<p>Units has a value of {$units}.</p>";
+$cost = 0;
+if($units > 1000){
+    $cost = 35;
+    for($i = 1000 ; $i < $units; $i += 1){
+        $cost = $cost + 0.03;
+    }
+}
+else if ($units >= 501){
+    $cost = 10;
+    for($i = 500; $i < $units; $i += 1){
+        $cost = $cost + 0.05;
+    }
+}
+else {
+    $cost = 10;
+}
+
+echo $cost;
 
 
 
