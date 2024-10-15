@@ -107,19 +107,29 @@ else {
 
 echo $cost;
 
-
-
 // 7.
 // Uncomment the following code
 // a) Modify the following code so that the loop outputs the numbers 5-15.
 // b) Re-write the loop as a while loop.
 
+echo "<br>";
 
-// for($i=5;$i<=10;$i++)
-// {
-//     echo "{$i}<br>";
-// }
+for($i=5;$i<=15;$i++)
+{
+    echo "{$i}";
+}
+echo "<br>";
 
+$i = 5;
+
+while ($i <= 15 ){
+    echo "{$i}";
+    $i++;
+}
+
+do{
+    
+}while($i <= 15);
 
 
 // 8. Arrays
@@ -131,10 +141,28 @@ echo $cost;
 // http://php.net/manual/en/function.array-merge.php. Output the joined array using a var_dump() or print_r() statement.
 // f) Sort this larger list of countries into reverse alphabetical order (do some research into sorting functions) and output the result using a foreach loop.
 
+echo "<br>";
 $countries=["China","India","USA","Indonesia","Brazil","Pakistan"];
 
-//$moreCountries=["Nigeria","Bangladesh","Russia","Japan"];
+$moreCountries=["Nigeria","Bangladesh","Russia","Japan"];
 
+print_r($countries);
+
+echo "<p> the country {$countries[2]} is in North America</p>";
+echo "<p> the countries {$countries[0]}, {$countries[1]}, {$countries[3]},  {$countries[5]} are in Asia</p>";
+
+echo "<br>";
+echo "<ul>";
+foreach ($countries as $mulak){
+    echo "<li>{$mulak}</li>";
+}
+echo "</ul>";
+
+$merge = array_merge($countries, $moreCountries);
+rsort($merge);
+print_r($merge);
+
+echo "<br>";
 
 // 9. Associative Arrays
 // a) Using the $films array, write an echo statement that outputs 'Spirited Away was released in 2001'
@@ -149,6 +177,7 @@ $films=[
     ["title"=>"Winter's Bone", "year"=>"2010", "duration"=>100,"certificate"=>"15"],
 ];
 
+var_dump($films[1]);
 
 // 10. Strings
 // a) Using the following string, write an echo statement that outputs the fifth character in the string
