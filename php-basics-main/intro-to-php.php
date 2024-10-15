@@ -179,6 +179,37 @@ $films=[
 
 var_dump($films[1]);
 
+
+echo "<br>";
+
+$films[] = ["title"=>"Animal", "year"=>"2023", "duration"=>194,"certificate"=>"PG"];
+
+echo "{$films[3]["title"]}";
+
+echo"<br";
+
+$films=[
+    ["title"=>"Jaws", "year"=>"1975", "duration"=>124,"certificate"=>"15"],
+    ["title"=>"Spirited Away", "year"=>"2001", "duration"=>124,"certificate"=>"PG"],
+    ["title"=>"Winter's Bone", "year"=>"2010", "duration"=>100,"certificate"=>"15"],
+];
+
+echo "<br>";
+echo "<table style = 'border:solid'>";
+    echo "<tr>";
+        echo "<th> Title </th>";
+        echo "<th> Year </th>";
+        echo "<th> Duration </th>";
+    echo "</tr>";
+foreach ($films as $pop){
+    echo "<tr>";
+        echo "<th> {$pop["title"]} </th>";
+        echo "<th> {$pop["year"]} </th>";
+        echo "<th> {$pop["duration"]} </th>";
+    echo "</tr>";
+}
+echo "</table>";
+
 // 10. Strings
 // a) Using the following string, write an echo statement that outputs the fifth character in the string
 // b) Use the strlen() (http://php.net/manual/en/function.strlen.php) function to output the length of the string
@@ -186,7 +217,20 @@ var_dump($films[1]);
 // d) Use the substr() (http://php.net/manual/en/function.substr.php) function to output the word 'Web'
 
 
-$moduleStr="CHT2520 Advanced Web Programming";
+$m="CHT2520 Advanced Web Programming";
+
+echo "<br>";
+echo "{$m [5]}";
+echo"<br>";
+echo strlen($m);
+echo "<br>";
+$m = strtolower($m);
+echo $m;
+echo "<br>";
+$sub = substr("{$m}", 16, -12);
+echo $sub;
+
+
 
 ?>
 </body>
