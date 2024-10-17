@@ -230,8 +230,6 @@ echo "<br>";
 $sub = substr("{$m}", 16, -12);
 echo $sub;
 
-
-
 ?>
 </body>
 </html>
