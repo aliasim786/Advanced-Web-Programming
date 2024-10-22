@@ -706,9 +706,3 @@ Have a look in _show.blade.php_ and inspect this page in a browser to understand
   - Call `delete()` on the film object. Again, the documentation has examples (https://laravel.com/docs/11.x/eloquent#deleting-models).
   - Redirect the user to the homepage.
 
-```php
-Route::get('/films', function () {
-    return "Display all the films.";
-});
-
-```
