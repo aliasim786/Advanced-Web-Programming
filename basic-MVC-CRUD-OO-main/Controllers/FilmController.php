@@ -68,6 +68,10 @@ class FilmController extends BaseController
     }
     function destroy()
     {
-        //Add your code in here
+        $id = $_POST['id'];
+        
+        $this->filmModel->delete($id);
+
+        header('Location: ./index.php');
     }
 }

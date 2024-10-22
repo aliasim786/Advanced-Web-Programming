@@ -34,4 +34,6 @@ if ($action === "/") {
     $filmController->edit();
 } else if ($action === "update"){
     $filmController->update();
+} else if ($action === "delete"){
+    $filmController->destroy();
 }
