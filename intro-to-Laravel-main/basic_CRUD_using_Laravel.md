@@ -27,12 +27,20 @@ composer create-project laravel/laravel film-app
 
 - Composer should now download Laravel and download Laravel's dependencies (this may take a bit of time).
 
+  > On XAMPP on a PC you might get an error about *The zip extension and unzip command are missing*. To fix this:
+  >   - Open your *php.ini* file. You can find this in the PHP folder on XAMPP.
+  >   - Find the line (ctrl+f) `;extension=zip`.
+  >   - This line is commented out. To uncomment it, delete the semi-colon at the start of this line.
+  >   - Save the _php.ini_ file.
+  >   - Restart Apache and try to create the Laravel project again.
+
+  > On a Mac you might get problems with the permissions on the *storage* folder in the *film-app* folder. Change the permissions on this folder (you should be able to do this by 'right-clicking' on the folder) to allow read and write access for everyone.
+  
   > What if I get a timeout error? Occasionally I have experienced Composer timing out when setting up a Laravel project. If this happens, change the timeout duration by entering the following command
   > `composer config --global process-timeout 2000`. Then try and create your project again.
 
-- Once Composer has finished setting up your Laravel project, you can then close the shell window.
-
-- Open the Laravel project folder in VS Code. You should see lots of folders and files in the explorer panel (The top one should be _App_).
+- Once Composer has finished setting up your Laravel project, open the Laravel project folder in VS Code.
+- You should see lots of folders and files in the explorer panel (The top one should be _App_).
 
 ## Changing the _DocumentRoot_
 
@@ -52,6 +60,11 @@ Change this to:-
 DocumentRoot "/xampp/htdocs/film-app/public"
 <Directory "/xampp/htdocs/film-app/public">
 ```
+> If you are using XAMPP on a Mac you will need to use a different path. You should be able to work this out from the original setting. You will need to change it to something like
+> ```
+> DocumentRoot "/Applications/XAMPP/xamppfiles/htdocs/film-app/public"
+> <Directory "/Applications/XAMPP/xamppfiles/htdocs/film-app/public"> 
+> ```
 
 This changes the _DocumentRoot_ to the _public_ folder in Laravel. Now when the user enters http://localhost Apache will run _index.php_ in this folder.
 
@@ -433,7 +446,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class FilmsTableSeeder extends Seeder
+class FilmSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -447,7 +460,7 @@ class FilmsTableSeeder extends Seeder
 }
 ```
 
-Next, we need to tell the _DatabaseSeeder_ class to run the _FilmsTableSeeder_. From the _seeds_ folder open _DatabaseSeeder.php_.
+Next, we need to tell the _DatabaseSeeder_ class to run the _FilmSeeder_. From the _seeders_ folder open _DatabaseSeeder.php_.
 Modify it so that it runs our _FilmSeeder_ i.e.
 
 ```php
@@ -510,7 +523,7 @@ use App\Models\Film;
 function index()
 {
     $films = Film::all();
-    return view('film/list-view',['films' => $films]);
+    return view('films.index',['films' => $films]);
 }
 ```
 
@@ -705,4 +718,3 @@ Have a look in _show.blade.php_ and inspect this page in a browser to understand
   - Use Eloquent to _find_ the correct film using the _id_ value.
   - Call `delete()` on the film object. Again, the documentation has examples (https://laravel.com/docs/11.x/eloquent#deleting-models).
   - Redirect the user to the homepage.
-

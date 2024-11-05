@@ -1,10 +1,9 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-<link href="public/style.css" type="text/css" rel="stylesheet">
 
 define('LARAVEL_START', microtime(true));
-
 
 // Determine if the application is in maintenance mode...
 if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {

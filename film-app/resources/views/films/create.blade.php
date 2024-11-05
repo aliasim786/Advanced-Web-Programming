@@ -2,7 +2,8 @@
   <h1>Add a new film</h1>
 
   <form method="POST" action="/films">
-    @csrf
+  @csrf
+  <div>...</div>
     <div>
       <label for="title">Title:</label>
       <input type="text" id="title" name="title" />
