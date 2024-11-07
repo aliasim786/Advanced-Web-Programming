@@ -1,5 +1,5 @@
-<x-layout title="List the songs">
-    <h1>My Playlist:</h1>
+<x-layout title="Ali's music App">
+    <h1>My Songs:</h1>
     @foreach ($music as $music)
     <p>
         <a href="/music/{{$music->id}}">

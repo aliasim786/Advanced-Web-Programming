@@ -15,6 +15,6 @@ class musicSeeder extends Seeder
     {
         DB::table('music')->insert(['title' => 'Old Money', 'Artist' => 'AP Dhillion', 'duration' => 5]);
         DB::table('music')->insert(['title' => 'Marathon', 'Artist' => 'Skrapz', 'duration' => 4]);
-        //DB::table('music')->insert(['title' => '', 'year' => 1989, 'duration' => 120]);
+        DB::table('music')->insert(['title' => 'jatt life', 'Artist' => 'varinder gill', 'duration' => 12]);
     }
 }

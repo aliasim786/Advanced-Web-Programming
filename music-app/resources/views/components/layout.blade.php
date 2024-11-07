@@ -8,9 +8,9 @@
   <body>
     <nav>
       <ul>
-        <li><a href="/music">Home</a></li>
-        <li><a href="/music/add">Add a new song </a></li>
-        <li><a href="/music/about">About</a></li>
+        <li><a href="/music">Playlist</a></li>
+        <li><a href="/music/add"> Add Song</a></li>
+        <li><a href="/music/about">About the app</a></li>
       </ul>
     </nav>
     {{$slot}}
