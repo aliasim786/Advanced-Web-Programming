@@ -1,25 +1,33 @@
 <x-layout title="Edit a song">
-    <h1>Edit the details for {{$music->title}}</h1>
-    <form action="/music" method="POST">
-    @csrf
-    @method('PATCH')
-    <!--A hidden field contains the id number of the film -->
-    <input type="hidden" name="id" value="{{$music->id}}">
-    <div>
-        <label for="title">Title:</label>
-        <!-- The text boxes are populated with values from the database ready for the user to edit -->
-        <input type="text" id="title" name="title" value="{{$music->title}}">
+<h1 class="page-title">Edit the details for {{$music->title}}</h1>
+<div class="edit-song-container">
+        <form action="/music" method="POST" class="edit-song-form">
+            @csrf
+            @method('PATCH')
+            <input type="hidden" name="id" value="{{$music->id}}">
+
+            <div class="form-group">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" id="title" name="title" class="form-input" value="{{$music->title}}">
+            </div>
+
+            <div class="form-group">
+                <label for="Artist" class="form-label">Artist:</label>
+                <input type="text" id="Artist" name="Artist" class="form-input" value="{{$music->Artist}}">
+            </div>
+
+            <div class="form-group">
+                <label for="duration" class="form-label">Duration:</label>
+                <select id="duration" name="duration" class="form-select">
+                    @for ($i = 1; $i <= 10; $i++)
+                        <option value="{{ $i }}" {{ $music->duration == $i ? 'selected' : '' }}>{{ $i }} min</option>
+                    @endfor
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Save Changes</button>
+            </div>
+        </form>
     </div>
-    <div>
-        <label for="Artist">Year:</label>
-        <input type="text" id="Artist" name="Artist" value="{{$music->Artist}}">
-    </div>
-    <div>
-        <label for="duration">Duration:</label>
-        <input type="text" id="duration" name="duration" value="{{$music->duration}}">
-    </div>
-    <div>
-        <button type="submit">Save Changes</button>
-    </div>
-    </form>
 </x-layout>

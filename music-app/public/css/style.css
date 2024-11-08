@@ -1,7 +1,644 @@
 body {
-    background-color: rgb(176, 179, 176);
+    background-color: rgb(165, 163, 163);
     font-family: Arial, Helvetica, sans-serif;
   }
   button {
     text-transform: uppercase;
   }
+
+  /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: rgb(232, 77, 77);
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+}
+
+nav {
+  flex-grow: 1;
+}
+
+/*General page containe */
+.song-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Each song item container */
+.song-item {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/*Styling for song links */
+.song-link {
+  display: block;
+  font-size: 1.25rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s, transform 0.3s;
+}
+
+/* Hover effects for links */
+.song-link:hover {
+  color: #0056b3;
+  transform: translateX(5px); /* Slightly moves to the right on hover */
+}
+
+/* Hover effect for song items */
+.song-item:hover {
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Edit Song Page Styling */
+.edit-song-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-song-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.edit-song-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-label {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.form-input, .form-select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus, .form-select:focus {
+  border-color: #007bff;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.submit-btn:active {
+  background-color: #003f7f;
+}
+/* General form styling */
+.edit-song-form {
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input and select box styling */
+.form-input, .form-select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-input:focus, .form-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Submit button styling */
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.submit-btn:active {
+  background-color: #003f7f;
+}
+/* General form container */
+.edit-song-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Title Styling */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Form styling */
+.edit-song-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+.form-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Input and Select Field Styling */
+.form-input, .form-select {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus, .form-select:focus {
+  border-color: #007bff;
+}
+
+/* Duration Dropdown specific */
+.form-select {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Button Styling */
+.submit-btn {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  background-color: #003f7f;
+  transform: translateY(0);
+}
+
+/* Small screen responsiveness */
+@media (max-width: 768px) {
+  .edit-song-container {
+      padding: 20px;
+  }
+
+  .page-title {
+      font-size: 2rem;
+  }
+
+  .form-input, .form-select {
+      font-size: 1rem;
+  }
+
+  .submit-btn {
+      font-size: 1.1rem;
+  }
+}
+/* General container for the form */
+.add-song-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Title styling */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Form styling */
+.song-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form group (each label/input pair) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+.form-label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Input and select field styling */
+.form-input, .form-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus effect for input/select fields */
+.form-input:focus, .form-select:focus {
+  border-color: #007bff;
+}
+
+/* Submit button styling */
+.submit-btn {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover and active effects */
+.submit-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  background-color: #003f7f;
+  transform: translateY(0);
+}
+
+/* Small screen responsiveness */
+@media (max-width: 768px) {
+  .add-song-container {
+      padding: 20px;
+  }
+
+  .page-title {
+      font-size: 2rem;
+  }
+
+  .form-input, .form-select {
+      font-size: 1rem;
+  }
+
+  .submit-btn {
+      font-size: 1.1rem;
+  }
+}
+/* General container for the song details page */
+.song-details-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Title of the song */
+.song-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Artist and Duration details */
+.song-artist, .song-duration {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Grouping the buttons */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+/* Styling for the Edit button */
+.edit-btn button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-btn button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.edit-btn button:active {
+  background-color: #003f7f;
+  transform: translateY(0);
+}
+
+/* Styling for the Delete button */
+.delete-btn {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.delete-btn:active {
+  background-color: #9b2d21;
+  transform: translateY(0);
+}
+
+/* Small screen responsiveness */
+@media (max-width: 768px) {
+  .song-details-container {
+      padding: 20px;
+  }
+
+  .song-title {
+      font-size: 2rem;
+  }
+
+  .song-artist, .song-duration {
+      font-size: 1rem;
+  }
+
+  .edit-btn button, .delete-btn {
+      font-size: 1rem;
+  }
+}
+/* Styling for the pagination container*/
+.pagination-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+Pagination links
+.pagination-container .pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.pagination-container .pagination li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.pagination-container .pagination li a {
+  color: #007bff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active page styling */
+.pagination-container .pagination li.active a {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Hover effect */
+.pagination-container .pagination li a:hover {
+  background-color: #0056b3;
+  color: white; 
+} 
+/* Basic styling for the header and navigation */
+header {
+  background-color: #333;
+  padding: 10px 20px;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; /* Space between nav links and search bar */
+  align-items: center; /* Vertically align items */
+}
+
+/* Style for the navigation links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for navigation links */
+.nav-links li a:hover {
+  background-color: #555;
+}
+
+/* Style for the search bar container */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.search-container button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}

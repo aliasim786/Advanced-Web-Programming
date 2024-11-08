@@ -7,9 +7,21 @@ use App\Models\music;
 
 class musicController extends Controller
 {
-
-    function index()
+    public function search(Request $request)
 {
+    $query = $request->input('query');
+    return view('songs.index', compact('music'));
+}
+
+
+    public function index()
+{
+     // Fetch songs with pagination, 6 per page
+     $music = music::paginate(6);
+
+     // Pass the songs to the view
+     return view('music.index', compact('music'));
+
     $music = music::all();
     return view('music.index',['music' => $music]);
 }
