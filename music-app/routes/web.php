@@ -14,4 +14,4 @@ Route::get('/music/{id}', [musicController::class, 'show']);
 Route::get('/music/{id}/edit', [musicController::class, 'edit']);
 Route::patch('/music',[musicController::class, 'update']);
 Route::delete('music',[musicController::class,'destroy']);
-Route::get('/music/search', [MusicController::class, 'search']);
+

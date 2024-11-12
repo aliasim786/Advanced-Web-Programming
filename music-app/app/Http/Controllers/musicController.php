@@ -14,17 +14,21 @@ class musicController extends Controller
 }
 
 
-    public function index()
+public function index(Request $request)
 {
-     // Fetch songs with pagination, 6 per page
-     $music = music::paginate(6);
+    // Get the search query from the request
+    $search = $request->input('search');
 
-     // Pass the songs to the view
-     return view('music.index', compact('music'));
+    // If a search query exists, filter by title or artist, else show all
+    $music = Music::when($search, function ($query, $search) {
+        return $query->where('title', 'like', '%' . $search . '%')
+                     ->orWhere('artist', 'like', '%' . $search . '%');
+    })
+    ->paginate(5); // Adjust the number of items per page as needed
 
-    $music = music::all();
-    return view('music.index',['music' => $music]);
+    return view('music.index', compact('music', 'search'));
 }
+
 
     function create()
     {
