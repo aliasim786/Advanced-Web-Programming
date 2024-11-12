@@ -39,15 +39,27 @@ public function index(Request $request)
     {
         return view('music.about');
     }
-    function store(Request $request)
+
+function store(Request $request)
 {
-    $music = new music();
+    // Validation rules
+    $validate = $request->validate([
+        'title' => 'required|string|max:255',
+        'Artist' => 'required|string|max:255', 
+        'duration' => 'required|numeric|min:1',
+    ]);
+
+    // Creating a new music record
+    $music = new Music();
     $music->title = $request->title;
-    $music ->Artist = $request->Artist;
-    $music ->duration = $request->duration;
-    $music ->save();
+    $music->Artist = $request->Artist;
+    $music->duration = $request->duration;
+    $music->save();
+
+    // Redirect to the music list or the appropriate page
     return redirect('/music');
 }
+
 function show($id)
 {
     $music = music::find($id);
@@ -58,15 +70,37 @@ function edit($id)
         $music = music::find($id);
         return view('music.edit', ['music' => $music]);
     }
+   
     function update(Request $request)
-    {
-        $music = music ::find($request->id);
-        $music ->title = $request->title;
-        $music ->Artist = $request->Artist;
-        $music ->duration = $request->duration;
-        $music ->save();
-        return redirect('/music');
+{
+    // Validation rules
+    $validated = $request->validate([
+        'title' => 'required|string|max:255',
+        'Artist' => 'required|string|max:255',
+        'duration' => 'required|numeric|min:1', 
+    ]);
+
+    // Find the music record by ID
+    $music = Music::find($request->id);
+
+    // Check if music record exists
+    if ($music) {
+        // Update fields
+        $music->title = $request->title;
+        $music->Artist = $request->Artist;
+        $music->duration = $request->duration;
+
+        // Save the updated record
+        $music->save();
+    } else {
+        // Handle the case where music is not found (optional)
+        return redirect('/music')->with('error', 'Music record not found');
     }
+
+    // Redirect to the music list or another page
+    return redirect('/music')->with('success', 'Music updated successfully');
+}
+
 
     function destroy(Request $request){
         $music  = music::find($request->id);
