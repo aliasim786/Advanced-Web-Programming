@@ -15,7 +15,7 @@
         </ul>
         <div class="search-container">
           <form action="/music" method="GET">
-            <input type="text" name="search" value="{{ request('search') }}" placeholder="Search songs..." />
+            <input type="text" name="search" value="{{ request('search') }}" placeholder="Search songs or artist..." />
             <button type="submit">Search</button>
           </form>
         </div>
