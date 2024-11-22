@@ -90,3 +90,54 @@ html {
       margin-right: auto;
     }
   }
+  /* Make sure the nav items have proper spacing */
+.nav-opt {
+  padding: 0.5em;
+  text-align: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.desktop-header-wrapper .nav-list {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* Mobile-specific nav styling */
+@media screen and (max-width: 640px) {
+  .nav-list {
+    text-align: center;
+  }
+}
+
+/* Style links in the main content */
+.content-link {
+  color: rgb(8, 47, 73);
+  font-size: 1.2em;
+  padding: 0.5em;
+  transition: all 0.3s ease;
+}
+
+.content-link:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(8, 47, 73);
+  text-decoration: none;
+}
+
+/* Styling the hamburger and close icons */
+.menu-icon svg path {
+  stroke: white;
+}
+
+#closeIcon svg path {
+  stroke: white;
+}
+
+/* Add padding for the list items in the main content */
+.content-opt {
+  padding: 0.5em 0;
+}
