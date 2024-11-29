@@ -1,67 +1,78 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Amazing Film App</title>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./css/style.css" type="text/css" rel="stylesheet" >
-  </head>
-  <body>
-    <header class="header">
-        <!--this is the new opening div-->
-        <div class="desktop-header-wrapper">
-          <div class="header-wrapper">
-            <div class="logo">Amazing Film App</div>
-            <div onclick="toggleNav()" id="openIcon" class="menu-icon">
-              <svg width="30px" viewBox="0 0 10 10" fill="none">
-                <path d="M1 1h8M1 4h 8M1 7h8" stroke="#666" stroke-width="1" />
-              </svg>
-            </div>
-            <div id="closeIcon" onclick="toggleNav()" class="menu-icon hide">X</div>
-          </div>
-          <nav>
-            <ul id="navList" class="nav-list">
-              <li class="nav-opt"><a class="nav-link" href="#">Home</a></li>
-              <li class="nav-opt"><a class="nav-link" href="#">Add New film</a></li>
-              <li class="nav-opt"><a class="nav-link" href="#">About</a></li>
-            </ul>
-          </nav>
-        <!--the new div closes here-->
-        </div>
-      </header>
-    <div class="main-content">
-    <div>
-        <h2 class="content-heading">Recommended</h2>
-        <img class="poster" src="./images/jaws_movie_poster.jpg" alt="Jaws Poster">
-        <p>
-        Jaws is a 1975 American thriller film directed by Steven Spielberg, based on the 1974 novel by Peter Benchley. It stars Roy Scheider as police chief Martin Brody, who, with the help of a marine biologist (Richard Dreyfuss) and a professional shark hunter (Robert Shaw), hunts a man-eating great white shark that attacks beachgoers at a summer resort town. Murray Hamilton plays the mayor, and Lorraine Gary portrays Brody's wife. The screenplay is credited to Benchley, who wrote the first drafts, and actor-writer Carl Gottlieb, who rewrote the script during principal photography.
-    </p>
-    
-    </div>
-            
-    
-    <div class="content-list-holder">
-        <h2 class="content-heading">Popular</h2>
-        <ul class="content-list">
-        <li class="content-opt"><a class="content-link" href='#'>Jaws</a></li>
-        <li class="content-opt"><a class="content-link" href='#'>Winter's Bone</a></li>
-        <li class="content-opt"><a class="content-link" href='#'>Do The Right Thing</a></li>
-        <li class="content-opt"><a class="content-link" href='#'>The Incredibles</a></li>
-        <li class="content-opt"><a class="content-link" href='#'>The Godfather</a></li>
-        </ul>
-    </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazing Film App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
 
-    <div class="content-list-holder">
-        <h2 class="content-heading">Recently Added</h2>
-        <ul class="content-list">
-        <li class="content-opt"><a class="content-link" href='#'>Spirited Away</a></li>
-        <li class="content-opt"><a class="content-link" href='#'>Moonlight</a></li>
-        <li class="content-opt"><a class="content-link" href='#'>Life of PI</a></li>
-        <li class="content-opt"><a class="content-link" href='#'>Gravity</a></li>
-        <li class="content-opt"><a class="content-link" href='#'>Arrival</a></li>
+  <header class="bg-sky-950 text-white">
+    <div class="sm:flex sm:justify-between lg:max-w-screen-lg lg:mx-auto">
+      <div class="flex justify-between p-3">
+        <div>Amazing Film App</div>
+        <div onclick="toggleNav()" id="openIcon" class="cursor-pointer hidden sm:hidden">
+          <svg width="30px" viewBox="0 0 10 10" fill="none">
+            <path d="M1 1h8M1 4h8M1 7h8" stroke="#fff" stroke-width="1" />
+          </svg>
+        </div>
+        <div onclick="toggleNav()" id="closeIcon" class="cursor-pointer sm:hidden">X</div>
+      </div>
+      <nav>
+        <ul id="navList" class="sm:block sm:p-3">
+          <li class="sm:inline sm:border-0 border-t border-white">
+            <a class="sm:inline-block pt-1 pr-3 pb-1 pl-3 hover:bg-white/25" href="#">Home</a>
+          </li>
+          <li class="sm:inline sm:border-0 border-t border-white">
+            <a class="sm:inline-block pt-1 pr-3 pb-1 pl-3 hover:bg-white/25" href="#">Add New Film</a>
+          </li>
+          <li class="sm:inline sm:border-0 border-t border-white">
+            <a class="sm:inline-block pt-1 pr-3 pb-1 pl-3 hover:bg-white/25" href="#">About</a>
+          </li>
         </ul>
+      </nav>
     </div>
-</div>
-<script src="js/app.js"></script>
+  </header>
+
+  <div class="main-content p-1 sm:flex sm:flex-row sm:flex-wrap lg:max-w-screen-lg lg:mx-auto">
+    <!-- Recommended section -->
+    <div class="content-list-holder sm:w-1/2 p-3">
+      <h2 class="content-heading text-xl font-semibold">Recommended</h2>
+      <img class="poster sm:float-right sm:w-1/2 p-2" src="./images/jaws_movie_poster.jpg" alt="Jaws Poster">
+      <p>
+        Jaws is a 1975 American thriller film directed by Steven Spielberg, based on the 1974 novel by Peter Benchley. It stars Roy Scheider as police chief Martin Brody, who, with the help of a marine biologist (Richard Dreyfuss) and a professional shark hunter (Robert Shaw), hunts a man-eating great white shark that attacks beachgoers at a summer resort town.
+      </p>
+    </div>
+    
+    <!-- Popular Movies Section -->
+    <div class="content-list-holder sm:w-1/2 p-3">
+      <h2 class="content-heading text-xl font-semibold">Popular</h2>
+      <ul class="content-list">
+        <li class="content-opt"><a class="content-link hover:text-blue-600" href="#">Jaws</a></li>
+        <li class="content-opt"><a class="content-link hover:text-blue-600" href="#">Winter's Bone</a></li>
+        <li class="content-opt"><a class="content-link hover:text-blue-600" href="#">Do The Right Thing</a></li>
+        <li class="content-opt"><a class="content-link hover:text-blue-600" href="#">The Incredibles</a></li>
+        <li class="content-opt"><a class="content-link hover:text-blue-600" href="#">The Godfather</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main-content p-1 sm:flex sm:flex-row sm:flex-wrap lg:max-w-screen-lg lg:mx-auto">
+    <!-- Recently Added Movies Section -->
+    <div class="content-list-holder sm:w-1/2 p-3">
+      <h2 class="content-heading text-xl font-semibold">Recently Added</h2>
+      <ul class="content-list">
+        <li class="content-opt"><a class="content-link hover:text-blue-600" href="#">Spirited Away</a></li>
+        <li class="content-opt"><a class="content-link hover:text-blue-600" href="#">Moonlight</a></li>
+        <li class="content-opt"><a class="content-link hover:text-blue-600" href="#">Life of Pi</a></li>
+        <li class="content-opt"><a class="content-link hover:text-blue-600" href="#">Gravity</a></li>
+        <li class="content-opt"><a class="content-link hover:text-blue-600" href="#">Arrival</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+
 </body>
 </html>
